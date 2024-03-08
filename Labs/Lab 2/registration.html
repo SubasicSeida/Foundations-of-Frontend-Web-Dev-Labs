@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+    </head>
+    <body>
+        <center><img src="ibu.png" alt="International Burch University" style="width:170px;margin:20px 0px"></center>
+        <center><h2>International Burch University</h2></center>
+        <div style="width: 30%; margin: auto;">
+            <h2 style="margin-top: 40px; margin-bottom: 30px;">REGISTRATION FORM</h2>
+            <div style="display: flex;">
+                <div style="flex: 50%;">
+                    <form>
+                        <label for="firstname">First name:</label><br>
+                        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name"><br>
+                    </form>
+                    <p style="margin-top: 7px; margin-bottom: 0;">Username:</p>
+                    <p style="margin-top: 7px; margin-bottom: 0;">Password:</p>
+                    <p style="margin-top: 7px; margin-bottom: 0;">Date of Birth:</p>
+                    <p style="margin-top: 27px; margin-bottom: 0;">Place of Birth:</p>
+                    <p style="margin-top: 27px; margin-bottom: 0;">Gender:</p>
+                    <p style="margin-top: 30px; margin-bottom: 0;">Email:</p>
+                    <p style="margin-top: 7px; margin-bottom: 0;">Phone:</p>
+                    <p style="margin-top: 13px; margin-bottom: 0;">Hair Color:</p>
+                </div>
+                <div style="flex: 50%;">
+                    <form>
+                        <label for="lastname">Last name:</label><br>
+                        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name"><br>
+                        <input type="text" id="username" name="username" style="margin-top: 5px; margin-bottom: 0;"><br>
+                        <input type="password" id="password" name="password" style="margin-top: 5px; margin-bottom: 0;"><br>
+                        <input type="date" id="dob" name="dob" style="margin-top: 5px; margin-bottom: 0;"><br>
+                        <input type="text" id="pob" name="pob" style="margin-top: 25px; margin-bottom: 0;"><br>
+                        <input type="radio" id="male" name="gender" style="margin-top: 5px; margin-bottom: 0;" value="Male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" style="margin-top: 5px; margin-bottom: 0;" value="Female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" style="margin-top: 5px; margin-bottom: 0;" value="Other">
+                        <label for="other">Other</label><br>
+                        <input type="text" id="email" name="email" style="margin-top: 7px; margin-bottom: 0;"><br>
+                        <input type="text" id="phone" name="phone" style="margin-top: 5px; margin-bottom: 0;"><br>
+                        <input type="color" id="haircolor" name="haircolor" style="margin-top: 5px; margin-bottom: 0;"><br>
+                    </form>
+                </div>
+            </div>
+            <p style="margin-top: 7px; margin-bottom: 0;">Notes:</p>
+            <textarea id="notes" name="notes" rows="7" cols="52"></textarea><br>
+            <input type="checkbox" id="notifications" name="notifications" style="margin-top: 7px; margin-bottom: 0;">
+            <label for="notifications">Receive notifications</label><br>
+            <input type="submit" value="Register" style="margin-left: 340px;">
+        </div>
+    </body>
+</html>
