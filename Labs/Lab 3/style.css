@@ -1,0 +1,40 @@
+body {
+    background-color: #85AFD4;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;    
+}
+
+.white_text, .links {
+    color : white;
+}
+
+.links {
+    font-weight: bold;
+}
+
+.submit_buttons {
+    background-color: #E47272;
+    border-radius: 20px;
+}
+
+.registration_form {
+    margin: auto;
+    width: 30%;
+}
+
+.registration_button {
+    margin-left: 340px;
+}
+
+.courses_table {
+    border-collapse: collapse;
+    width: 70%;
+}
+
+.courses_table th, .courses_table td {
+    border: 2px solid white;
+    text-align: center;
+    padding: 20px 30px;
+}
+

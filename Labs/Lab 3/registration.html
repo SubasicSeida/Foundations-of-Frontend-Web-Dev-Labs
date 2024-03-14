@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <title>Registration</title>
+    </head>
+    <body class="white_text">
+        <center><img src="ibu.png" alt="International Burch University" style="width:170px;margin:20px 0px"></center>
+        <center><h2>International Burch University</h2></center>
+        <div class="registration_form">
+            <h2 style="margin-top: 40px; margin-bottom: 30px;">REGISTRATION FORM</h2>
+            <table>
+                <tr>
+                    <td>First Name :</td>
+                    <td>Last Name :</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="firstname" name="firstname" placeholder="Enter your first name"></td>
+                    <td><input type="text" id="lastname" name="lastname" placeholder="Enter your last name"></td>
+                </tr>
+                <tr>
+                    <td>Username :</td>
+                    <td><input type="text" id="username" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password :</td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth :</td>
+                    <td><input type="date" id="dob" name="dob"></td>
+                </tr>
+                <tr>
+                    <td>Place of Birth :</td>
+                    <td><input type="text" id="pob" name="pob"></td>
+                </tr>
+                <tr>
+                    <td>Gender :</td>
+                    <td><input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" value="Other">
+                        <label for="other">Other</label></td>
+                </tr>
+                <tr>
+                    <td>Email :</td>
+                    <td><input type="text" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Phone :</td>
+                    <td><input type="text" id="phone" name="phone"></td>
+                </tr>
+                <tr>
+                    <td>Hair Color :</td>
+                    <td><input type="color" id="haircolor" name="haircolor"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Notes :</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea id="notes" name="notes" rows="7" cols="52"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox" id="notifications" name="notifications">
+                        <label for="notifications">Receive notifications</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Register" class="registration_button submit_buttons white_text" style="border: 1px solid;"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
