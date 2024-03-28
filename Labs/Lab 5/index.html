@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <title>JS Table</title>
+    </head>
+    <body>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ID<i class="ri-expand-up-down-line"></i></th>
+                    <th onclick="sortTable(1)">Name<i class="ri-expand-up-down-line"></i></th>
+                    <th onclick="sortTable(2)">Country<i class="ri-expand-up-down-line"></i></th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>Afghanistan</td>
+                    <td>john1@example.com</td>
+                    <td><button class="show-modal-btn" data-username="John Doe">Click</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>Albania</td>
+                    <td>jane2@example.com</td>
+                    <td><button class="show-modal-btn" data-username="Jane Smith">Click</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Jim Brown</td>
+                    <td>Algeria</td>
+                    <td>jim3@example.com</td>
+                    <td><button class="show-modal-btn" data-username="Jim Brown">Click</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Jake White</td>
+                    <td>Andorra</td>
+                    <td>jake4@example.com</td>
+                    <td><button class="show-modal-btn" data-username="Jake White">Click</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Julie Black</td>
+                    <td>Angola</td>
+                    <td>julie5@example.com</td>
+                    <td><button class="show-modal-btn" data-username="Julie Black">Click</button></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Jennifer Green</td>
+                    <td>Antigua and Barbuda</td>
+                    <td>jennifer6@example.com</td>
+                    <td><button class="show-modal-btn" data-username="Jennifer Green">Click</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modal-message"></p>
+            </div>
+          
+          </div>
+    <script src="myscript.js"></script>
+    </body>
+</html>
