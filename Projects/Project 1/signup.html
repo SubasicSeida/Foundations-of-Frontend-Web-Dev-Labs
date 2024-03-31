@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_signup.css">
+        <title>Join Us</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Join Us</h1>
+            <form action="#">
+                <input type="text" placeholder="Username">
+                <input type="text" placeholder="Full Name">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Repeat Password">
+            </form>
+            <div class="terms">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">I agree to <a>Terms and Conditions</a></label>
+            </div>
+            <button class="btn" onclick="showModal()">Sign Up</button>
+            <div class="member">
+                Already a member? <a href="./login.html">Login Here</a>
+            </div>
+        </div>
+
+        <div id="welcomeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Welcome!</h2>
+                <p>Thank you for joining us. Get ready to experience a new fitness journey!</p>
+            </div>
+        </div>
+
+
+        <script>
+            function showModal() {
+            document.getElementById('welcomeModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('welcomeModal').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

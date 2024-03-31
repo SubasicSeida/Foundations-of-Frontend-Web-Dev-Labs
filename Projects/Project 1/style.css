@@ -50,8 +50,16 @@
   transition: 0.3s;
 }
 
+.btn a {
+  color: var(--text-light);
+}
+
 .btn:hover {
   background-color: var(--secondary-color-dark);
+}
+
+.btn a:hover {
+  color: var(--primary-color);
 }
 
 img {
