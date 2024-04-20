@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="searchInput" placeholder="Search for employee...">
+    <table id="employeesTable">
+      <thead>
+        <tr>
+          <th data-sort="name">Employee Name <span class="sortIcon"></span></th>
+          <th data-sort="department">Department <span class="sortIcon"></span></th>
+          <th data-sort="position">Position <span class="sortIcon"></span></th>
+          <th data-sort="salary">Salary <span class="sortIcon"></span></th>
+          <th data-sort="hireDate">Hire Date <span class="sortIcon"></span></th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+<!-- Modal -->
+<div id="employeeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="employeeDetails">
+        <img id="employeeImage" src="" alt="Employee Picture">
+        <table id="employeeInfoTable">
+          <tbody>
+            <!-- Employee details will be populated here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
