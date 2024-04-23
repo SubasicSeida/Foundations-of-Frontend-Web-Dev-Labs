@@ -454,6 +454,14 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     -o-transition:.3s linear;
     transition: .3s linear;
 }
+
+.explore-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
 .single-explore-img{position:relative;overflow: hidden;}
 .single-explore-img:before {
     position: absolute;
