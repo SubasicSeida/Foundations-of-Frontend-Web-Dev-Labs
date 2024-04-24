@@ -44,6 +44,10 @@
         <!--responsive.css-->
         <link rel="stylesheet" href="assets/css/responsive.css">
 
+		<!-- Modal style -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     </head>
 	
 	<body>		
@@ -80,10 +84,10 @@
 								+1 222 777 6565
 							</li>
 							<li class="header-top-contact">
-								<a href="#">sign in</a>
+								<button class="loginBtn" onclick="document.getElementById('signInModal').style.display='block'">sign in</button>
 							</li>
 							<li class="header-top-contact">
-								<a href="#">register</a>
+								<button class="loginBtn" onclick="document.getElementById('registerModal').style.display='block'">register</button>
 							</li>
 						</ul>
 					</div>
@@ -92,6 +96,48 @@
 					
 		</header><!--/.header-top-->
 		<!--header-top end -->
+
+		<!-- Modal for Sign In form -->
+		<div class="modal" id="signInModal">
+			<form class="modal-content animate">
+				<span onclick="document.getElementById('signInModal').style.display='none'" class="close" title="Close">&times;</span>
+				<h3>Sign In Here</h3>
+		
+				<label for="username">Username</label>
+				<input type="text" placeholder="Email or Phone" id="username" required>
+		
+				<label for="password">Password</label>
+				<input type="password" placeholder="Password" id="password" required>
+		
+				<button class="formBtn">Sign In</button>
+				<div class="social">
+				  <div class="go"><i class="fab fa-google"></i>  Google</div>
+				  <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+				</div>
+			</form>
+		</div>
+		<!-- Modal end -->
+
+		<!-- Modal for Register form -->
+		<div class="modal" id="registerModal">
+			<form class="modal-content animate">
+				<span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close">&times;</span>
+				<h3>Register Here</h3>
+		
+				<label for="username">Username</label>
+				<input type="text" placeholder="Email or Phone" id="username" required>
+		
+				<label for="password">Password</label>
+				<input type="password" placeholder="Password" id="password" required>
+		
+				<button class="formBtn">Register</button>
+				<div class="social">
+				  <div class="go"><i class="fab fa-google"></i>  Google</div>
+				  <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+				</div>
+			</form>
+		</div>
+		<!-- Modal end -->
 
 		<!-- top-area Start -->
 		<section class="top-area">

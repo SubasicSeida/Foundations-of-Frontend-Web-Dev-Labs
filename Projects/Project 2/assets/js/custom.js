@@ -8,6 +8,7 @@ $(document).ready(function(){
 3. welcome animation support
 4. feather icon
 5. counter
+6. modal forms
 ======================================*/
 
     // 1. Scroll To Top 
@@ -88,16 +89,18 @@ $(document).ready(function(){
             $(".welcome-hero-serch-box").addClass("animated fadeInDown").css({'opacity':'0'});
         });
 
-	// 4. feather icon
-
-		feather.replace();
-
-	// 5. counter
-		$(window).on('load', function(){	
-			$('.counter').counterUp({
-				delay: 10,
-				time: 3000
-			});	
-		});
-
+	// 6. modal forms
+	var signIn = document.getElementById('signInModal'); // get the sign in modal
+	var register = document.getElementById('registerModal');
+	
+	window.onclick = function(event) {
+		// Check if the clicked element is the sign in modal
+		if (event.target == signIn) {
+			signIn.style.display = "none";
+		}
+		// Check if the clicked element is the register modal
+		if (event.target == register) {
+			register.style.display = "none";
+		}
+	}
 });

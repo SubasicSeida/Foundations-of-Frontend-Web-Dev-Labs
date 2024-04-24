@@ -12,16 +12,17 @@ font-family: 'Roboto', sans-serif;
 /*=========== TABLE OF CONTENTS ===========
 1.  General css (Reset code)
 2.  Header-top
-3.  Top-area
-4.  Welcome-hero
-5.  List-topics
-6.  Works  
-7.  Explore
-8.  Reviews
-9.  Counter
-10. Blog
-11. Subscribe
-12. Footer
+3.  Modal Form
+4.  Top-area
+5.  Welcome-hero
+6.  List-topics
+7.  Works  
+8.  Explore
+9.  Reviews
+10.  Counter
+11. Blog
+12. Subscribe
+13. Footer
 ==========================================*/
 
 /*-------------------------------------
@@ -163,10 +164,159 @@ html,body{height: 100%;}
     font-size: 12px;
     font-weight: 300;
 }
+.loginBtn {
+    border: none;
+}
+
+/*-------------------------------------
+        3. Modal Form
+--------------------------------------*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.close.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.modal-content {
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    color: #ffffff;
+} 
+
+.modal-content h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    color: white;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.formBtn {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formBtn:hover {
+    background-color: #ff545a;
+}
+
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+} */
+  
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+    .close.psw {
+       display: block;
+       float: none;
+    }
+  }
 
 
 /*-------------------------------------
-        3. Top-area
+        4. Top-area
 --------------------------------------*/
 nav.navbar.bootsnav {
     background-color:#fff;
@@ -239,7 +389,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*.navbar-toggle */
 
 /*-------------------------------------
-        4.  Welcome-hero
+        5.  Welcome-hero
 --------------------------------------*/
 .welcome-hero {
     position: relative;
@@ -339,7 +489,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 /*-------------------------------------
-        5. List-topuics
+        6. List-topics
 --------------------------------------*/
 .list-topics-content {
     position: relative;
@@ -380,7 +530,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 /*-------------------------------------
-        6. Works 
+        7. Works 
 --------------------------------------*/
 .works{padding: 0 0 90px;}
 .works-content {margin-top: 73px;}
@@ -435,7 +585,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 .single-how-works:hover{box-shadow: 0 0px 10px rgba(71,71,71,.4);background: #ff545a;}
 
 /*-------------------------------------
-        7. Explore
+        8. Explore
 --------------------------------------*/
 .explore{
     padding:117px 0 95px;
@@ -588,7 +738,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 .single-explore-item:hover{box-shadow: 0 10px 20px rgba(21,19,19,.2);}
 
 /*-------------------------------------
-        8. Reviews
+        9. Reviews
 --------------------------------------*/
 .reviews{padding:117px 0 75px;}
 .reviews-content {margin-top:36px;}
@@ -681,7 +831,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*.slick-slide*/
 
 /*-------------------------------------       
-        9.  Counter
+        10.  Counter
 --------------------------------------*/
 .statistics{
     position:relative;
@@ -725,7 +875,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 /*-------------------------------------
-        10. Blog
+        11. Blog
 --------------------------------------*/
 .blog{padding:120px 0 90px;}
 .blog-content{margin-top: 80px;}
@@ -762,7 +912,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 
 /*-------------------------------------
-        11. Subscribe
+        12. Subscribe
 --------------------------------------*/
 .subscription{
     background: #f8fafb;
@@ -850,7 +1000,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*appsLand-btn*/
 
 /*-------------------------------------
-        12. Footer
+        13. Footer
 --------------------------------------*/
 .footer-menu {padding: 45px 0;}
 .footer-menu .navbar-header{padding:0;}
