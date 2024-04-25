@@ -967,7 +967,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*appsLand-btn*/
 .appsLand-btn {
     position: absolute;
-    top: 0;
+    top: 8px;
     right: 0;
     background: #ff545a;
     display: inline-block;
@@ -1057,7 +1057,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 .footer-social span {margin-right:15px;margin-left: 0;color: #a5adb3;}
 .footer-social span:hover{color: #ff545a;}
-.footer-social a:hover {background:#ff545a;color: #fff;}
+.footer-social a:hover {background:#ff545a; color: #fff;}
 
 /*===============================
     Scroll Top
