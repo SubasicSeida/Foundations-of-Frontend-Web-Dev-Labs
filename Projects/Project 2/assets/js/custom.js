@@ -9,6 +9,7 @@ $(document).ready(function(){
 4. feather icon
 5. counter
 6. modal forms
+7. toggle content
 ======================================*/
 
     // 1. Scroll To Top 
@@ -101,6 +102,23 @@ $(document).ready(function(){
 		// Check if the clicked element is the register modal
 		if (event.target == register) {
 			register.style.display = "none";
+		}
+	}
+
+	// 7. toggle content
+	function toggleContent () {
+		var dots = document.getElementById("dots");
+		var moreText = document.getElementById("more");
+		var btnText = document.getElementById("single-blog-item-btn");
+
+		if (dots.style.display === "none") {
+			dots.style.display = "inline";
+			btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-up'></i>";
+			moreText.style.display = "none";
+		} else {
+			dots.style.display = "none";
+			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
+			moreText.style.display = "inline";
 		}
 	}
 });
