@@ -120,5 +120,6 @@ $(document).ready(function(){
 			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
 			moreText.style.display = "inline";
 		}
+		
 	}
 });
