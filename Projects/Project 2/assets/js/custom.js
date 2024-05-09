@@ -10,6 +10,7 @@ $(document).ready(function(){
 5. counter
 6. modal forms
 7. toggle content
+8. form validation
 ======================================*/
 
     // 1. Scroll To Top 
@@ -106,7 +107,7 @@ $(document).ready(function(){
 	}
 
 	// 7. toggle content
-	function toggleContent () {
+	function toggleContent(){
 		var dots = document.getElementById("dots");
 		var moreText = document.getElementById("more");
 		var btnText = document.getElementById("single-blog-item-btn");
@@ -120,6 +121,32 @@ $(document).ready(function(){
 			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
 			moreText.style.display = "inline";
 		}
-		
 	}
+
+	// 8. form validation
+	$.validator.addMethod("strongPassword", function(value) {
+		// Password must contain at least one lowercase letter, one uppercase letter
+		// and be at least 8 characters long
+		return /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(value);
+	  }, "Password must contain at least one lowercase letter, one uppercase letter, and be at least 8 characters long");
+  
+	  $("#register-form").validate({
+		rules: {
+		  username: {
+			required: true
+		  },
+		  password: {
+			required: true,
+			strongPassword: true
+		  }
+		},
+		messages: {
+		  username: {
+			required: "Please enter your username"
+		  },
+		  password: {
+			required: "Please enter your password"
+		  }
+		}
+});
 });

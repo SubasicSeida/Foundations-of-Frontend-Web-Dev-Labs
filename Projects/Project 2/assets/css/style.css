@@ -905,6 +905,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     padding-top: 20px;
 }
 
+#single-blog-item-btn:hover {
+    color: #1b1e20;
+}
+
 #more {
     display: none;
 }

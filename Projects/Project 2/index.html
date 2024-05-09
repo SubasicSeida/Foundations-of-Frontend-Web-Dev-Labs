@@ -99,15 +99,15 @@
 
 		<!-- Modal for Sign In form -->
 		<div class="modal" id="signInModal">
-			<form class="modal-content animate">
+			<form class="modal-content animate" id="sign-in-form">
 				<span onclick="document.getElementById('signInModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Sign In Here</h3>
 		
 				<label for="username">Username</label>
-				<input type="text" placeholder="Email or Phone" id="username" required>
+				<input type="text" placeholder="Email or Phone" id="username" name="username">
 		
 				<label for="password">Password</label>
-				<input type="password" placeholder="Password" id="password" required>
+				<input type="password" placeholder="Password" id="password" name="password">
 		
 				<button class="formBtn">Sign In</button>
 				<div class="social">
@@ -120,15 +120,15 @@
 
 		<!-- Modal for Register form -->
 		<div class="modal" id="registerModal">
-			<form class="modal-content animate">
+			<form class="modal-content animate" id="register-form">
 				<span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Register Here</h3>
 		
 				<label for="username">Username</label>
-				<input type="text" placeholder="Email or Phone" id="username" required>
+				<input type="text" placeholder="Email or Phone" id="username" name="username">
 		
 				<label for="password">Password</label>
-				<input type="password" placeholder="Password" id="password" required>
+				<input type="password" placeholder="Password" id="password" name="password">
 		
 				<button class="formBtn">Register</button>
 				<div class="social">
@@ -1114,7 +1114,7 @@
 										From learning ancient survival skills from indigenous tribes to witnessing wildlife in their 
 										natural habitats, every moment becomes an opportunity for connection and exploration.
 									</span></p>
-									<button onclick="toggleContent()" id="single-blog-item-btn">Show more <i class="fa-solid fa-chevron-down"></i></button>
+									<button id="single-blog-item-btn" onclick="toggleContent()">Show more <i class="fa-solid fa-chevron-down"></i></button>
 								</div>
 							</div>
 						</div>
@@ -1208,8 +1208,13 @@
 		
 		<!-- Include all js compiled plugins (below), or include individual files as needed -->
 
-		<script src="assets/js/jquery.js"></script>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 		
+		<!-- jQuery Validation Plugin  -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+
+
 		<!--bootstrap.min.js-->
         <script src="assets/js/bootstrap.min.js"></script>
 		
