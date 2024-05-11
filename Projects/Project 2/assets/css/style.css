@@ -191,6 +191,7 @@ html,body{height: 100%;}
 }
 
 .modal-content {
+    max-height: calc(100% - 120px);
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
