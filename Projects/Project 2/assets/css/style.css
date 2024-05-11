@@ -172,16 +172,16 @@ html,body{height: 100%;}
         3. Modal Form
 --------------------------------------*/
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
+    display: none;
+    position: fixed; 
+    z-index: 100; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
     padding-top: 60px;
 }
 
@@ -191,7 +191,6 @@ html,body{height: 100%;}
 }
 
 .modal-content {
-    height: 520px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -290,12 +289,7 @@ input{
 .close:focus {
     color: red;
     cursor: pointer;
-}
-
-/* .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-} */
+} 
   
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)}
@@ -900,16 +894,16 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     grid-column: 2;
 }
 
-#single-blog-item-btn {
+.single-blog-item-btn {
     border: none;
     padding-top: 20px;
 }
 
-#single-blog-item-btn:hover {
+.single-blog-item-btn:hover {
     color: #1b1e20;
 }
 
-#more {
+#more1, #more2, #more3 {
     display: none;
 }
 

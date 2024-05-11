@@ -48,6 +48,27 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+		<!-- jQuery Validation Plugin -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav.js 
+		Bootsnav is a jQuery plugin that enhances the navigation menu functionality in Bootstrap-based websites.-->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--slick.min.js
+		library for creating responsive and customizable sliders or carousels-->
+        <script src="assets/js/slick.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+
+		
+
     </head>
 	
 	<body>		
@@ -99,7 +120,7 @@
 
 		<!-- Modal for Sign In form -->
 		<div class="modal" id="signInModal">
-			<form class="modal-content animate" id="sign-in-form">
+			<form class="modal-content" id="sign-in-form">
 				<span onclick="document.getElementById('signInModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Sign In Here</h3>
 		
@@ -109,7 +130,7 @@
 				<label for="password">Password</label>
 				<input type="password" placeholder="Password" id="password" name="password">
 		
-				<button class="formBtn">Sign In</button>
+				<button class="formBtn" type="submit">Sign In</button>
 				<div class="social">
 				  <div class="go"><i class="fab fa-google"></i>  Google</div>
 				  <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
@@ -130,7 +151,7 @@
 				<label for="password">Password</label>
 				<input type="password" placeholder="Password" id="password" name="password">
 		
-				<button class="formBtn">Register</button>
+				<button class="formBtn" type="submit">Register</button>
 				<div class="social">
 				  <div class="go"><i class="fab fa-google"></i>  Google</div>
 				  <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
@@ -347,7 +368,7 @@
 								<div class="single-explore-img">
 									<img src="assets/images/explore/e1.jpg" alt="explore image">
 									<div class="single-explore-img-info">
-										<button onclick="window.location.href='#'">best rated</button>
+										<button>best rated</button>
 										<div class="single-explore-image-icon-box">
 											<ul>
 												<li>
@@ -784,6 +805,18 @@
 			</div><!--/.container-->
 
 		</section><!--/.explore-->
+
+		<!-- Lightbox for image gallery -->
+		<div id="lightbox">
+			<span id="close-btn" onclick="closeLightbox()">&times;</span>
+			<img id="lightbox-img" src="" alt="lightbox image">
+
+			<!-- Thumbnails container -->
+			<div id="thumbnail-container"></div>
+	
+			<button id="prev-btn" onclick="changeImage(-1)">&lt; Prev</button>
+			<button id="next-btn" onclick="changeImage(1)">Next &gt;</button>
+		</div>
 		<!--explore end -->
 
 		<!--reviews start -->
@@ -1062,7 +1095,7 @@
 									<p>
 										Dive into travel blogs, guidebooks, and online forums to gather inspiration and insights from 
 										fellow adventurers. Pay attention to factors like climate, budget, and accessibility to ensure a 
-										seamless and<span id="dots">...</span><span id="more"> enjoyable travel experience. Don't be afraid to think outside the box and consider 
+										seamless and<span id="dots1">...</span><span id="more1"> enjoyable travel experience. Don't be afraid to think outside the box and consider 
 										destinations off the beaten path - sometimes, the most extraordinary experiences await in the 
 										most unexpected places. Once you've compiled a list of potential destinations, it's time to dig 
 										deeper. Explore virtual tours, watch travel documentaries, and read firsthand accounts to get a 
@@ -1070,7 +1103,7 @@
 										align with your interests, whether it's sampling local cuisine, immersing yourself in history 
 										and culture, or embarking on thrilling outdoor adventures.
 									</span></p>
-									<button onclick="toggleContent()" id="single-blog-item-btn">Show more <i class="fa-solid fa-chevron-down"></i></button>
+									<button onclick="toggleContent('dots1', 'more1', 'single-blog-item-btn1')" id="single-blog-item-btn1">Show more <i class="fa-solid fa-chevron-down"></i></button>
 								</div>
 							</div>
 						</div>
@@ -1085,7 +1118,7 @@
 									<p>
 										The beauty of spontaneous travel lies in its unpredictability. You never know what hidden 
 										gems you might stumble upon or what serendipitous encounters await around the next corner. 
-										Whether it's stumbling<span id="dots">...</span><span id="more"> upon a quaint café tucked away in a cobblestone alleyway, striking 
+										Whether it's stumbling<span id="dots2">...</span><span id="more2"> upon a quaint café tucked away in a cobblestone alleyway, striking 
 										up a conversation with a local artisan, or stumbling upon a breathtaking viewpoint just off
 										the beaten path, every moment becomes a precious memory to cherish. Of course, spontaneous 
 										travel isn't without its challenges. It requires a willingness to embrace uncertainty and a
@@ -1093,7 +1126,7 @@
 										spontaneity and unpredictability that make each journey a truly unique and unforgettable 
 										experience.
 									</span></p>
-									<button onclick="toggleContent()" id="single-blog-item-btn">Show more <i class="fa-solid fa-chevron-down"></i></button>
+									<button onclick="toggleContent('dots2', 'more2', 'single-blog-item-btn2')" id="single-blog-item-btn2">Show more <i class="fa-solid fa-chevron-down"></i></button>
 								</div>
 							</div>
 						</div>
@@ -1108,20 +1141,20 @@
 									<p>
 										Whether it's camping under the stars in the heart of the desert, trekking through dense 
 										rainforests in search of hidden waterfalls, or sailing to secluded islands only accessible 
-										by boat, off-the-grid travel<span id="dots">...</span><span id="more"> opens doors to experiences that few have the opportunity to 
+										by boat, off-the-grid travel<span id="dots3">...</span><span id="more3"> opens doors to experiences that few have the opportunity to 
 										discover. But off-the-grid travel isn't just about escaping civilization - it's also about 
 										immersing yourself in the natural beauty and cultural richness of the destinations you visit. 
 										From learning ancient survival skills from indigenous tribes to witnessing wildlife in their 
 										natural habitats, every moment becomes an opportunity for connection and exploration.
 									</span></p>
-									<button id="single-blog-item-btn" onclick="toggleContent()">Show more <i class="fa-solid fa-chevron-down"></i></button>
+									<button id="single-blog-item-btn3" class="single-blog-item-btn" onclick="toggleContent('dots3', 'more3', 'single-blog-item-btn3')">Show more <i class="fa-solid fa-chevron-down"></i></button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div><!--/.container-->
-			
+		
 		</section><!--/.blog-->
 		<!--blog end -->
 
@@ -1206,30 +1239,24 @@
         </footer><!--/.footer-->
 		<!--footer end-->
 		
-		<!-- Include all js compiled plugins (below), or include individual files as needed -->
-
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-		
-		<!-- jQuery Validation Plugin  -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
-
-
-		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- bootsnav.js 
-		Bootsnav is a jQuery plugin that enhances the navigation menu functionality in Bootstrap-based websites.
-		-->
-		<script src="assets/js/bootsnav.js"></script>
-
-        <!--slick.min.js
-		library for creating responsive and customizable sliders or carousels
-		-->
-        <script src="assets/js/slick.min.js"></script>
-		     
-        <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
+		<script>
+			// DO NOT MOVE TO custom.js
+			function toggleContent(dotsId, moreTextId, btnTextId) {
+					var dots = document.getElementById(dotsId);
+					var moreText = document.getElementById(moreTextId);
+					var btnText = document.getElementById(btnTextId);
+				
+					if (dots.style.display === "none") {
+						dots.style.display = "inline";
+						btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-up'></i>";
+						moreText.style.display = "none";
+					} else {
+						dots.style.display = "none";
+						btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
+						moreText.style.display = "inline";
+					}
+				}
+		</script>
         
     </body>
 	
