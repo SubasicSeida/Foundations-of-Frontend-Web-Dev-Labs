@@ -67,7 +67,8 @@
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
 
-		
+		<!-- jQuery BlockUI -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
 
     </head>
 	
@@ -124,8 +125,8 @@
 				<span onclick="document.getElementById('signInModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Sign In Here</h3>
 		
-				<label for="username">Username</label>
-				<input type="text" placeholder="Email or Phone" id="username" name="username">
+				<label for="email">Email</label>
+				<input type="email" placeholder="Email" id="email" name="email">
 		
 				<label for="password">Password</label>
 				<input type="password" placeholder="Password" id="password" name="password">
@@ -145,8 +146,8 @@
 				<span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Register Here</h3>
 		
-				<label for="username">Username</label>
-				<input type="text" placeholder="Email or Phone" id="username" name="username">
+				<label for="email">Email</label>
+				<input type="email" placeholder="Email" id="email" name="email">
 		
 				<label for="password">Password</label>
 				<input type="password" placeholder="Password" id="password" name="password">
@@ -805,18 +806,6 @@
 			</div><!--/.container-->
 
 		</section><!--/.explore-->
-
-		<!-- Lightbox for image gallery -->
-		<div id="lightbox">
-			<span id="close-btn" onclick="closeLightbox()">&times;</span>
-			<img id="lightbox-img" src="" alt="lightbox image">
-
-			<!-- Thumbnails container -->
-			<div id="thumbnail-container"></div>
-	
-			<button id="prev-btn" onclick="changeImage(-1)">&lt; Prev</button>
-			<button id="next-btn" onclick="changeImage(1)">Next &gt;</button>
-		</div>
 		<!--explore end -->
 
 		<!--reviews start -->
@@ -1032,6 +1021,36 @@
 
 		</section><!--/.reviews-->
 		<!--reviews end -->
+
+		<section id="customer-photos" class="customer-photos">
+			<div class="gallery" onclick="openLightbox(event)">
+				<img src="assets/images/customer photos/cp-1.jpg"
+					alt="Image 1">
+				<img src="assets/images/customer photos/cp-2.jpg"
+					alt="Image 2">
+				<img src="assets/images/customer photos/cp-3.jpg"
+					alt="Image 3">
+				<img src="assets/images/customer photos/cp-4.jpg"
+					alt="Image 4">
+			</div>
+		
+			<!-- Lightbox container -->
+			<div id="lightbox">
+				<!-- Close button -->
+				<span id="close-cp-btn" onclick="closeLightbox()">&times;</span>
+		
+				<!-- Main lightbox image -->
+				<img id="lightbox-img" src="" alt="lightbox image">
+		
+				<!-- Thumbnails container -->
+				<div id="thumbnail-container">
+				</div>
+		
+				<!-- Previous and Next buttons -->
+				<button id="prev-btn" onclick="changeImage(-1)">&lt; Prev</button>
+				<button id="next-btn" onclick="changeImage(1)">Next &gt;</button>
+			</div>
+		</section>
 
 		<!-- statistics strat -->
 		<section id="statistics"  class="statistics">

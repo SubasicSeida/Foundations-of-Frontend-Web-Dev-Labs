@@ -19,10 +19,11 @@ font-family: 'Roboto', sans-serif;
 7.  Works  
 8.  Explore
 9.  Reviews
-10.  Counter
-11. Blog
-12. Subscribe
-13. Footer
+10. Customer Photos Gallery
+11. Counter
+12. Blog
+13. Subscribe
+14. Footer
 ==========================================*/
 
 /*-------------------------------------
@@ -825,8 +826,109 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 /*.slick-slide*/
 
+
 /*-------------------------------------       
         10.  Counter
+--------------------------------------*/
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery img {
+    margin: 10px;
+    cursor: pointer;
+    max-width: 300px;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#lightbox img {
+    max-width: 80%;
+    max-height: 60vh;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+#close-cp-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#prev-btn,
+#next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.thumbnail {
+    max-width: 50px;
+    width: 100px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 2px solid #fff;
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover,
+.thumbnail.active-thumbnail {
+    opacity: 0.7;
+}
+
+/*-------------------------------------       
+        11.  Counter
 --------------------------------------*/
 .statistics{
     position:relative;
@@ -870,7 +972,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 /*-------------------------------------
-        11. Blog
+        12. Blog
 --------------------------------------*/
 .blog{padding:120px 0 90px;}
 .blog-content{margin-top: 80px;}
@@ -930,7 +1032,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 
 /*-------------------------------------
-        12. Subscribe
+        13. Subscribe
 --------------------------------------*/
 .subscription{
     background: #f8fafb;
@@ -1018,7 +1120,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*appsLand-btn*/
 
 /*-------------------------------------
-        13. Footer
+        14. Footer
 --------------------------------------*/
 .footer-menu {padding: 45px 0;}
 .footer-menu .navbar-header{padding:0;}
