@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	"use strict";
 
-
 /*=========== TABLE OF CONTENTS ===========
 1. Scroll To Top 
 2. slick carousel
@@ -121,7 +120,34 @@ $(document).ready(function(){
 	}
 
 	// 7. toggle content
-	// DOES NOT WORK HERE BUT IN HTML SCRIPT
+
+	function toggleContent(dotsId, moreTextId, btnTextId) {
+		var dots = document.getElementById(dotsId);
+		var moreText = document.getElementById(moreTextId);
+		var btnText = document.getElementById(btnTextId);
+	
+		if (dots.style.display === "none") {
+			dots.style.display = "inline";
+			btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-up'></i>";
+			moreText.style.display = "none";
+		} else {
+			dots.style.display = "none";
+			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
+			moreText.style.display = "inline";
+		}
+	}
+
+	document.getElementById("single-blog-item-btn1").addEventListener("click", function() {
+		toggleContent("dots1", "more1", "single-blog-item-btn1");
+	});
+	
+	document.getElementById("single-blog-item-btn2").addEventListener("click", function() {
+		toggleContent("dots2", "more2", "single-blog-item-btn2");
+	});
+	
+	document.getElementById("single-blog-item-btn3").addEventListener("click", function() {
+		toggleContent("dots3", "more3", "single-blog-item-btn3");
+	});
 
 	// 8. form validation
 	$.validator.addMethod("strongPassword", function(value) {
@@ -213,12 +239,14 @@ $(document).ready(function(){
             currentIndex = clickedIndex;
             updateLightboxImage();
             document.getElementById('lightbox').style.display = 'flex';
+			document.body.classList.add('lightbox-open');
         }
     }
 
     // Close the lightbox
     function closeLightbox() {
         document.getElementById('lightbox').style.display = 'none';
+		document.body.classList.remove('lightbox-open');
     }
 
     // Change the lightbox image based on direction (1 for next, -1 for prev)
@@ -231,6 +259,8 @@ $(document).ready(function(){
         }
         updateLightboxImage();
     }
+	document.getElementById('prev-btn').addEventListener('click', () => changeImage(-1));
+	document.getElementById('next-btn').addEventListener('click', () => changeImage(1));
 
     // Update the lightbox image and thumbnails
     function updateLightboxImage() {
@@ -278,4 +308,11 @@ $(document).ready(function(){
             }
         }
     });
+
+	document.getElementById("gallery").addEventListener("click", function(event) {
+		openLightbox(event);
+	})
+	document.getElementById("close-cp-btn").addEventListener("click", function() {
+		closeLightbox();
+	})
 });

@@ -828,14 +828,19 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 
 /*-------------------------------------       
-        10.  Counter
+        10.  Gallery
 --------------------------------------*/
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.gallery-content {
     padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 100px;
 }
 
 .gallery img {
@@ -858,7 +863,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #lightbox img {
@@ -907,16 +912,17 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 .thumbnail-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .thumbnail {
     max-width: 50px;
     width: 100px;
     cursor: pointer;
     margin-top: 40px;
-    margin-left: 5px;
+    margin-left: 30px;
     margin-right: 5px;
     border: 2px solid #fff;
     transition: opacity 0.3s;
@@ -925,6 +931,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 .thumbnail:hover,
 .thumbnail.active-thumbnail {
     opacity: 0.7;
+}
+
+.lightbox-open .navbar {
+    display: none;
 }
 
 /*-------------------------------------       

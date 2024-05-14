@@ -56,12 +56,10 @@
 		<!--bootstrap.min.js-->
         <script src="assets/js/bootstrap.min.js"></script>
 		
-		<!-- bootsnav.js 
-		Bootsnav is a jQuery plugin that enhances the navigation menu functionality in Bootstrap-based websites.-->
+		<!-- bootsnav.js-->
 		<script src="assets/js/bootsnav.js"></script>
 
-        <!--slick.min.js
-		library for creating responsive and customizable sliders or carousels-->
+        <!--slick.min.js-->
         <script src="assets/js/slick.min.js"></script>
 		     
         <!--Custom JS-->
@@ -125,11 +123,11 @@
 				<span onclick="document.getElementById('signInModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Sign In Here</h3>
 		
-				<label for="email">Email</label>
-				<input type="email" placeholder="Email" id="email" name="email">
+				<label for="email1">Email</label>
+				<input type="email" placeholder="Email" id="email1" name="email">
 		
-				<label for="password">Password</label>
-				<input type="password" placeholder="Password" id="password" name="password">
+				<label for="password1">Password</label>
+				<input type="password" placeholder="Password" id="password1" name="password">
 		
 				<button class="formBtn" type="submit">Sign In</button>
 				<div class="social">
@@ -146,11 +144,11 @@
 				<span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close">&times;</span>
 				<h3>Register Here</h3>
 		
-				<label for="email">Email</label>
-				<input type="email" placeholder="Email" id="email" name="email">
+				<label for="email2">Email</label>
+				<input type="email" placeholder="Email" id="email2" name="email">
 		
-				<label for="password">Password</label>
-				<input type="password" placeholder="Password" id="password" name="password">
+				<label for="password2">Password</label>
+				<input type="password" placeholder="Password" id="password2" name="password">
 		
 				<button class="formBtn" type="submit">Register</button>
 				<div class="social">
@@ -1023,7 +1021,11 @@
 		<!--reviews end -->
 
 		<section id="customer-photos" class="customer-photos">
-			<div class="gallery" onclick="openLightbox(event)">
+			<div class="section-header">
+				<h2>photos from our clients</h2>
+				<p>Pictures say a thousand words</p>
+			</div><!--/.section-header-->
+			<div class="gallery gallery-content" id="gallery">
 				<img src="assets/images/customer photos/cp-1.jpg"
 					alt="Image 1">
 				<img src="assets/images/customer photos/cp-2.jpg"
@@ -1037,7 +1039,7 @@
 			<!-- Lightbox container -->
 			<div id="lightbox">
 				<!-- Close button -->
-				<span id="close-cp-btn" onclick="closeLightbox()">&times;</span>
+				<span id="close-cp-btn">&times;</span>
 		
 				<!-- Main lightbox image -->
 				<img id="lightbox-img" src="" alt="lightbox image">
@@ -1122,7 +1124,7 @@
 										align with your interests, whether it's sampling local cuisine, immersing yourself in history 
 										and culture, or embarking on thrilling outdoor adventures.
 									</span></p>
-									<button onclick="toggleContent('dots1', 'more1', 'single-blog-item-btn1')" id="single-blog-item-btn1">Show more <i class="fa-solid fa-chevron-down"></i></button>
+									<button onclick="toggleContent('dots1', 'more1', 'single-blog-item-btn1')" id="single-blog-item-btn1" class="single-blog-item-btn">Show more <i class="fa-solid fa-chevron-down"></i></button>
 								</div>
 							</div>
 						</div>
@@ -1145,7 +1147,7 @@
 										spontaneity and unpredictability that make each journey a truly unique and unforgettable 
 										experience.
 									</span></p>
-									<button onclick="toggleContent('dots2', 'more2', 'single-blog-item-btn2')" id="single-blog-item-btn2">Show more <i class="fa-solid fa-chevron-down"></i></button>
+									<button onclick="toggleContent('dots2', 'more2', 'single-blog-item-btn2')" id="single-blog-item-btn2" class="single-blog-item-btn">Show more <i class="fa-solid fa-chevron-down"></i></button>
 								</div>
 							</div>
 						</div>
@@ -1257,26 +1259,6 @@
 			
         </footer><!--/.footer-->
 		<!--footer end-->
-		
-		<script>
-			// DO NOT MOVE TO custom.js
-			function toggleContent(dotsId, moreTextId, btnTextId) {
-					var dots = document.getElementById(dotsId);
-					var moreText = document.getElementById(moreTextId);
-					var btnText = document.getElementById(btnTextId);
-				
-					if (dots.style.display === "none") {
-						dots.style.display = "inline";
-						btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-up'></i>";
-						moreText.style.display = "none";
-					} else {
-						dots.style.display = "none";
-						btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
-						moreText.style.display = "inline";
-					}
-				}
-		</script>
-        
     </body>
 	
 </html>
