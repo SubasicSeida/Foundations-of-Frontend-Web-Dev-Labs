@@ -128,11 +128,11 @@ $(document).ready(function(){
 	
 		if (dots.style.display === "none") {
 			dots.style.display = "inline";
-			btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-up'></i>";
+			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
 			moreText.style.display = "none";
 		} else {
 			dots.style.display = "none";
-			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
+			btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-down'></i>";
 			moreText.style.display = "inline";
 		}
 	}
@@ -315,4 +315,19 @@ $(document).ready(function(){
 	document.getElementById("close-cp-btn").addEventListener("click", function() {
 		closeLightbox();
 	})
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const switcher = document.getElementById('theme-switcher');
+		const currentTheme = localStorage.getItem('theme');
+	
+		if (currentTheme) {
+			document.body.classList.toggle('dark-theme', currentTheme === 'dark');
+		}
+	
+		switcher.addEventListener('click', () => {
+			document.body.classList.toggle('dark-theme');
+			const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+			localStorage.setItem('theme', theme);
+		});
+	});
 });
