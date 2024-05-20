@@ -11,6 +11,7 @@ $(document).ready(function(){
 7. toggle content
 8. form validation
 9. photo gallery
+10. dark theme
 ======================================*/
 
     // 1. Scroll To Top 
@@ -316,18 +317,14 @@ $(document).ready(function(){
 		closeLightbox();
 	})
 
-	document.addEventListener('DOMContentLoaded', () => {
-		const switcher = document.getElementById('theme-switcher');
-		const currentTheme = localStorage.getItem('theme');
-	
-		if (currentTheme) {
-			document.body.classList.toggle('dark-theme', currentTheme === 'dark');
+	// 10. dark theme
+	var darkThemeIcon = document.getElementById("dark-mode");
+	darkThemeIcon.addEventListener("click", function(){
+		document.body.classList.toggle("dark-theme");
+		if(document.body.classList.contains("dark-theme")){
+			darkThemeIcon.innerHTML = '<i class="fa-regular fa-sun"></i>';
+		}else{
+			darkThemeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
 		}
-	
-		switcher.addEventListener('click', () => {
-			document.body.classList.toggle('dark-theme');
-			const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-			localStorage.setItem('theme', theme);
-		});
-	});
+	})
 });
