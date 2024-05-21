@@ -30,6 +30,7 @@ font-family: 'Roboto', sans-serif;
 		1.General css (Reset code)
 --------------------------------------*/
 
+
 :root {
     --background-primary: #fff;
     --background-secondary: #f8fafb;
@@ -141,56 +142,6 @@ html,body{height: 100%;}
 /*=============Style css=========*/
 
 
-/*-------------------------------------
-        2. Header-top
---------------------------------------*/
-.header-top{border-bottom:1px solid var(--background-secondary); background-color: var(--background-primary);}
-
-.header-top ul li {display: inline-block; background-color: var(--background-primary); color:var(--text-color);}
-
-.header-top-left li,.header-top-right li  {display: inline-block; background-color: var(--background-primary); color:var(--text-color);}
-
-/*.select-opt*/
-.select-opt,.header-top-contact{
-    padding: 10px 18px;
-    border-right: 1px solid var(--background-secondary);
-    
-}
-.header-top-contact{
-    border-right: 0;
-    border-left: 1px solid var(--background-secondary);
-    font-size: 12px;
-}
-.select-opt select {
-    border: none;
-    cursor:pointer;
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 300;
-    background-color: var(--background-primary); color:var(--text-color);
-}
-.select-opt option{
-    color: var(--text-color);
-    text-transform: uppercase;
-}
-.select-opt a span.lnr-magnifier:before {
-    font-size: 12px;
-    color: var(--header-text-color);
-}
-.select-opt a span.lnr-magnifier:before {
-    font-size: 12px;
-    color: var(--header-text-color);
-}
-/*.select-opt*/
-
-.header-top-right ul li a{
-    color:var(--text-color);
-    font-size: 12px;
-    font-weight: 300;
-}
-.loginBtn {
-    border: none;
-}
 
 /*-------------------------------------
         3. Modal Form
@@ -315,24 +266,6 @@ input{
     color: red;
     cursor: pointer;
 } 
-  
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
-}
-
-@media screen and (max-width: 300px) {
-    .close.psw {
-       display: block;
-       float: none;
-    }
-  }
-
 
 /*-------------------------------------
         4. Top-area
