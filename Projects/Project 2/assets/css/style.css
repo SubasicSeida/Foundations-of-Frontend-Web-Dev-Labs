@@ -145,7 +145,7 @@ html,body{height: 100%;}
 
 /*-------------------------------------
         3. Modal Form
---------------------------------------*/
+--------------------------------------
 .modal {
     display: none;
     position: fixed; 
@@ -252,7 +252,7 @@ input{
 }
 
 .close {
-    /* Position it in the top right corner outside of the modal */
+    /* Position it in the top right corner outside of the modal 
     position: absolute;
     right: 25px;
     top: 25px;
@@ -1200,4 +1200,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--highlight);}
 @keyframes example {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
+}
+
+.list-group-item {
+    margin: 20px 0 20px 0;
 }

@@ -154,7 +154,7 @@
 
 
 <!--explore start -->
-<section id="explore" class="explore">
+<section id="explore-home" class="explore">
     <div class="container">
         <div class="section-header">
             <h2>explore</h2>
@@ -193,7 +193,7 @@
                                     from
                                     <span class="explore-price">5$-300$</span>
                                 </span>
-                                 <a href="#">resturent</a>
+                                 <a href="#">restaurant</a>
                             </p>
                             <div class="explore-person">
                                 <div class="row">
@@ -1038,7 +1038,7 @@
 <!--footer end-->
 
 <script>
-    // 1. Scroll To Top 
+    // Scroll To Top 
 		$(window).on('scroll',function () {
 			if ($(this).scrollTop() > 600) {
 				$('.return-to-top').fadeIn();
@@ -1054,8 +1054,7 @@
 		});
 	
 	
-	// 2. slick carousel
-
+	// slick carousel
 	    $(".testimonial-carousel").slick({
 	        infinite: true,
 	        centerMode: true,
@@ -1066,42 +1065,32 @@
 	        // the magic
 			responsive: [
 				{
-
 					breakpoint:1440,
 					settings: {
 					slidesToShow:3
 					}
-
 				},
 				{
-
 					breakpoint: 1024,
 					settings: {
 					slidesToShow:2,
-					
 					}
-
 				}, 
 				{
-
 					breakpoint:991,
 					settings: {
 					slidesToShow:2,
 					centerMode:false,
 					}
-
 				},
 				{
-
 					breakpoint:767,
 					settings: {
 					slidesToShow:1,
 					}
-
 				}
 			]
 	    });
-
 
 		$(window).on('load', function() {
 			$(".welcome-hero-txt h2,.welcome-hero-txt p").removeClass("animated fadeInUp").css({'opacity':'0'});
@@ -1114,8 +1103,7 @@
 		});
 		
 
-	// 7. toggle content
-
+	// toggle content
 	function toggleContent(dotsId, moreTextId, btnTextId) {
 		var dots = document.getElementById(dotsId);
 		var moreText = document.getElementById(moreTextId);
@@ -1144,7 +1132,8 @@
 		toggleContent("dots3", "more3", "single-blog-item-btn3");
 	});
 
-	// 8. form validation
+
+	// form validation
 	$.validator.addMethod("strongPassword", function(value) {
 		// Password must contain at least one lowercase letter, one uppercase letter
 		// and be at least 8 characters long
@@ -1222,12 +1211,12 @@
 		}
 	});
 
-	// 9. photo gallery 
+
+	// photo gallery 
 	let currentIndex = 0;
     const images = document.querySelectorAll('.gallery img');
     const totalImages = images.length;
 
-    // Open the lightbox
     function openLightbox(event) {
         if (event.target.tagName === 'IMG') {
             const clickedIndex = Array.from(images).indexOf(event.target);
@@ -1238,13 +1227,11 @@
         }
     }
 
-    // Close the lightbox
     function closeLightbox() {
         document.getElementById('lightbox').style.display = 'none';
 		document.body.classList.remove('lightbox-open');
     }
 
-    // Change the lightbox image based on direction (1 for next, -1 for prev)
     function changeImage(direction) {
         currentIndex += direction;
         if (currentIndex >= totalImages) {
@@ -1257,18 +1244,12 @@
 	document.getElementById('prev-btn').addEventListener('click', () => changeImage(-1));
 	document.getElementById('next-btn').addEventListener('click', () => changeImage(1));
 
-    // Update the lightbox image and thumbnails
     function updateLightboxImage() {
         const lightboxImg = document.getElementById('lightbox-img');
         const thumbnailContainer = document.getElementById('thumbnail-container');
-
-        // Update the main lightbox image
         lightboxImg.src = images[currentIndex].src;
-
-        // Clear existing thumbnails
         thumbnailContainer.innerHTML = '';
 
-        // Add new thumbnails
         images.forEach((image, index) => {
             const thumbnail = document.createElement('img');
             thumbnail.src = image.src;
@@ -1278,22 +1259,17 @@
             thumbnailContainer.appendChild(thumbnail);
         });
 
-        // Highlight the current thumbnail
         const thumbnails = document.querySelectorAll('.thumbnail');
         thumbnails[currentIndex].classList.add('active-thumbnail');
     }
 
-    // Update the main lightbox image when a thumbnail is clicked
     function updateMainImage(index) {
         currentIndex = index;
         updateLightboxImage();
     }
 
-    // Add initial thumbnails
     updateLightboxImage();
 
-
-    // To add keyboard navigation (left/right arrow keys)
     document.addEventListener('keydown', function (e) {
         if (document.getElementById('lightbox').style.display === 'flex') {
             if (e.key === 'ArrowLeft') {
