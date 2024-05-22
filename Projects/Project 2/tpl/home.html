@@ -828,13 +828,13 @@
     </div>
     <div class="gallery gallery-content" id="gallery">
         <img src="assets/images/customer photos/cp-1.jpg"
-            alt="Image 1">
+            alt="Image 1" loading="lazy">
         <img src="assets/images/customer photos/cp-2.jpg"
-            alt="Image 2">
+            alt="Image 2" loading="lazy">
         <img src="assets/images/customer photos/cp-3.jpg"
-            alt="Image 3">
+            alt="Image 3" loading="lazy">
         <img src="assets/images/customer photos/cp-4.jpg"
-            alt="Image 4">
+            alt="Image 4" loading="lazy">
     </div>
 
     <!-- Lightbox container -->
@@ -845,8 +845,8 @@
         <div id="thumbnail-container">
         </div>
         <!-- Previous and Next buttons -->
-        <button id="prev-btn" onclick="changeImage(-1)">&lt; Prev</button>
-        <button id="next-btn" onclick="changeImage(1)">Next &gt;</button>
+        <button id="prev-btn">&lt; Prev</button>
+        <button id="next-btn">Next &gt;</button>
     </div>
 </section>
 
@@ -1111,11 +1111,11 @@
 	
 		if (dots.style.display === "none") {
 			dots.style.display = "inline";
-			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
+			btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-down'></i>";
 			moreText.style.display = "none";
 		} else {
 			dots.style.display = "none";
-			btnText.innerHTML = "Show more <i class='fa-solid fa-chevron-down'></i>";
+			btnText.innerHTML = "Show less <i class='fa-solid fa-chevron-up'></i>";
 			moreText.style.display = "inline";
 		}
 	}

@@ -1,9 +1,36 @@
 <section id="explore" class="explore">
-    <div class="container">
+      <div class="container">
         <div class="section-header">
             <h2>explore</h2>
             <p>Explore New places, food, culture around the world and many more</p>
         </div>
+
+        <div class="accordion-container">
+          <button class="accordion">Restaurants and Hotels</button>
+          <div class="panel">
+            <p>
+              Explore a curated selection of top-rated restaurants and luxurious hotels, ensuring exceptional dining and comfortable 
+              stays. Discover unique culinary experiences and accommodations to suit all preferences and budgets.
+            </p>
+          </div>
+
+          <button class="accordion">Destinations and Tours</button>
+          <div class="panel">
+            <p>
+              Find exciting destinations and guided tours, from local hotspots to exotic getaways. Plan your perfect adventure with 
+              detailed itineraries, reviews, and insider tips to make the most of your travels.
+            </p>
+          </div>
+
+          <button class="accordion">Real Estate and Automotion</button>
+          <div class="panel">
+            <p>
+              Browse premium real estate listings and high-quality vehicles, tailored to your lifestyle needs. Whether you're searching 
+              for a new home or a reliable car, our listings offer comprehensive details and trusted options.
+            </p>
+          </div>
+        </div>
+
         <div class="explore-content">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -150,3 +177,20 @@
         </div>
     </div>
 </section>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active-panel");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+</script>
