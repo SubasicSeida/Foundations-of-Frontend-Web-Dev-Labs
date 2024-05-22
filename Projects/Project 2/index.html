@@ -32,6 +32,9 @@
         <link rel="stylesheet" href="assets/css/slick.css">
 		<link rel="stylesheet" href="assets/css/slick-theme.css">
 
+		<!--Toastr css-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
 		<!-- SPAPP css-->
 		<link rel="stylesheet" href="assets/css/spapp.css" />
 		
@@ -57,6 +60,9 @@
 		<!-- jQuery Validation Plugin -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
 
+		<!--Toastr js-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 		<!--SPAPP JS-->
         <script src="assets/js/jquery.spapp.js"></script>
 
@@ -77,58 +83,17 @@
 
     </head>
 	
-	<body>		
-		<!-- Modal for Sign In form 
-		<div class="modal" id="signInModal">
-			<form class="modal-content" id="sign-in-form">
-				<span onclick="document.getElementById('signInModal').style.display='none'" class="close" title="Close">&times;</span>
-				<h3>Sign In Here</h3>
-		
-				<label for="email1">Email</label>
-				<input type="email" placeholder="Email" id="email1" name="email">
-		
-				<label for="password1">Password</label>
-				<input type="password" placeholder="Password" id="password1" name="password">
-		
-				<button class="formBtn" type="submit">Sign In</button>
-				<div class="social">
-				  <div class="go"><i class="fab fa-google"></i>  Google</div>
-				  <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-				</div>
-			</form>
-		</div>
-		Modal end
-
-		Modal for Register form
-		<div class="modal" id="registerModal">
-			<form class="modal-content animate" id="register-form">
-				<span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close">&times;</span>
-				<h3>Register Here</h3>
-		
-				<label for="email2">Email</label>
-				<input type="email" placeholder="Email" id="email2" name="email">
-		
-				<label for="password2">Password</label>
-				<input type="password" placeholder="Password" id="password2" name="password">
-		
-				<button class="formBtn" type="submit">Register</button>
-				<div class="social">
-				  <div class="go"><i class="fab fa-google"></i>  Google</div>
-				  <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-				</div>
-			</form>
-		</div>
-		Modal end -->
+	<body>
 
 		<section class="top-area">
 			<div class="header-area">
 			    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
 			        <div class="container">
 			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-target="#navbar-menu">
 			                    <i class="fa fa-bars"></i>
 			                </button>
-			                <a class="navbar-brand" href="#home">list<span>race</span></a>
+			                <a class="navbar-brand" href="#">list<span>race</span></a>
 			            </div>
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">

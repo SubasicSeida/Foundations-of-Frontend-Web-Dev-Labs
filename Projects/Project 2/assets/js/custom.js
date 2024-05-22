@@ -17,8 +17,8 @@ $(document).ready(function(){
 		load: "blog.html",
 	});
 	app.route({
-		view: "profile",
-		load: "profile.html",
+		view: "account",
+		load: "account.html",
 	});
 	app.run();
 
