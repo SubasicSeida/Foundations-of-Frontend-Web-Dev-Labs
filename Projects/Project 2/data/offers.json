@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "imgSrc": "assets/images/explore/e2.jpg",
+        "cardTitle": "swim and dine resort",
+        "cardText": "🌊🍽️ Dive into Luxury at AquaEats Resort! 🍽️🌊 Escape to paradise at AquaEats, where the crystal-clear waters of our private beach meet world-class dining for an unforgettable experience.",
+        "cardSmallText": "From <span class='explore-price'>50$-500$</span>"
+    },
+    {
+        "id": 2,
+        "imgSrc": "assets/images/explore/e3.jpg",
+        "cardTitle": "europe tour",
+        "cardText": "🌍✈️ Explore the Charms of Europe! ✈️🌍Embark on an unforgettable journey through the heart of Europe with our exclusive tour package! Immerse yourself in the rich tapestry of history, culture, and breathtaking landscapes.",
+        "cardSmallText": "From <span class='explore-price'>5k$-10k$</span>"
+    },
+    {
+        "id": 3,
+        "imgSrc": "assets/images/explore/e4.jpg",
+        "cardTitle": "bungalow with swiming pool",
+        "cardText": "🌴🏠 Welcome to Paradise: Bungalow Bliss with a Private Pool! 🏊🌴Escape to your own slice of tropical paradise with our luxurious bungalow retreat, where relaxation and rejuvenation await at every turn.",
+        "cardSmallText": "From <span class='explore-price'>10k$-15k$</span>"
+    },
+    {
+        "id": 4,
+        "imgSrc": "assets/images/explore/e5.jpg",
+        "cardTitle": "vintage car expo",
+        "cardText": "🚗🎩 Step Back in Time: Vintage Car Expo 2024! 🎩🚗 🎩 Immerse yourself in the golden age of motoring as you stroll through rows of meticulously restored vintage cars, each one a masterpiece of design and engineering from a bygone era.",
+        "cardSmallText": "From <span class='explore-price'>500$-1200$</span>"
+    },
+    {
+        "id": 5,
+        "imgSrc": "assets/images/explore/e6.jpg",
+        "cardTitle": "thailand tour",
+        "cardText": "🌴🇹🇭 Discover the Treasures of Thailand: A Journey Through Paradise! 🇹🇭🌴 Embark on the adventure of a lifetime with our exclusive Thailand tour, where ancient wonders, vibrant culture, and breathtaking landscapes await at every turn.",
+        "cardSmallText": "From <span class='explore-price'>5k$-10k$</span>"
+    },
+    {
+        "id": 6,
+        "imgSrc": "assets/images/explore/e1.jpg",
+        "cardTitle": "tommy hilfiger bar",
+        "cardText": "🍸👔 Step into Style at Tommy's Bar by Hilfiger! 👔🍸Experience the epitome of sophistication and style at Tommy's Bar, the latest venture from fashion icon Tommy Hilfiger.",
+        "cardSmallText": "From <span class='explore-price'>5$-300$</span>"
+    }
+]
