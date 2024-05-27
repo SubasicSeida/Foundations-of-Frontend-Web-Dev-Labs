@@ -1159,3 +1159,39 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--highlight);}
   .panel p {
     padding: 20px;
   }
+
+.side-by-side {
+    height: 100vh;
+}
+
+.side-left {
+    padding: 20px;
+    float: left;
+    width: 400px;
+}
+
+.side-right:after {
+    content: "";
+    background-color: var(--header-text-color);
+    position: absolute;
+    width: 2px;
+    height: 60vh;
+    top: 180px;
+    left: 50%;
+    display: block;
+}
+
+.side-right {
+    padding: 20px;
+    float: right;
+    width: 400px;
+}
+
+.vertical-line {
+    width: 2px;
+    background-color: var(--dark);
+}
+
+.account-form {
+    margin-top: 50px;
+}
