@@ -822,7 +822,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--highlight);}
 /*-------------------------------------
         12. Blog
 --------------------------------------*/
-.blog{padding:120px 0 90px; background-color: var(--background-primary);}
+.blog{padding:120px 0 90px; background-color: var(--background-secondary);}
 .blog-content{margin-top: 80px;}
 
 .single-blog-item{

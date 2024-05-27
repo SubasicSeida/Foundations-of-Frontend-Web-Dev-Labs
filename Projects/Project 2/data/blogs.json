@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "imgSrc": "assets/images/blog/b1.jpg",
+        "cardTitle": "Discovering Your Perfect Travel Destination",
+        "cardText": "Dive into travel blogs, guidebooks, and online forums to gather inspiration and insights from fellow adventurers. Pay attention to factors like climate, budget, and accessibility to ensure a seamless and enjoyable travel experience.",
+        "cardSmallText": "Posted by Admin, March 2018"
+    },
+    {
+        "id": 2,
+        "imgSrc": "assets/images/blog/b2.jpg",
+        "cardTitle": "Embracing Serendipity: The Joy of Spontaneous Travel",
+        "cardText": "The beauty of spontaneous travel lies in its unpredictability. You never know what hidden gems you might stumble upon or what serendipitous encounters await around the next corner.",
+        "cardSmallText": "Posted by Admin, March 2018"
+    },
+    {
+        "id": 3,
+        "imgSrc": "assets/images/blog/b3.jpg",
+        "cardTitle": "Finding Solitude in Remote Destinations: The Beauty of Off-the-Grid Travel",
+        "cardText": "Whether it's camping under the stars in the heart of the desert, trekking through dense rainforests in search of hidden waterfalls, or sailing to secluded islands only accessible by boat, off-the-grid travel opens doors to experiences that few have the opportunity to discover.",
+        "cardSmallText": "Posted by Admin, March 2018"
+    }
+]
