@@ -63,6 +63,7 @@ let AccountService = {
             }
         });
     },
+
     login : function(user){
         $.ajax({
             url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/users.json',
@@ -90,18 +91,51 @@ let AccountService = {
             }
         })
     },
+
     showProfilePage : function(){
         const username = document.getElementById('name').value;
         document.getElementById('sign-up-section').classList.add('hidden');
         document.getElementById('profile-section').classList.remove('hidden');
         document.getElementById('profile-name').innerText = username;
             
-        document.getElementById('logout-button').addEventListener('click', function(){
-            document.getElementById('profile-section').classList.add('hidden');
-            document.getElementById('sign-up-section').classList.remove('hidden');
-            toastr.info('You are signed out!');
-            document.getElementById('profile-name').value = '';
-            document.getElementById('sign-up-form').reset();
+        let logoutButton = document.getElementById('logout-button');
+        if (!logoutButton.hasAttribute('data-event-listeners-attached')) {
+            logoutButton.addEventListener('click', function() {
+                document.getElementById('profile-section').classList.add('hidden');
+                document.getElementById('sign-up-section').classList.remove('hidden');
+                toastr.info('You are signed out!');
+                document.getElementById('profile-name').value = '';
+                document.getElementById('login-form').reset();
+            });
+            logoutButton.setAttribute('data-event-listeners-attached', 'true');
+        }
+    },
+
+    editProfile : function(){
+        let editProfileBtn = document.getElementById('edit-profile-btn');
+        editProfileBtn.addEventListener('click', function(){
+            AccountService.openEditModal();
+        });
+        document.getElementById('close-edit-modal').addEventListener('click', function(){
+            $('#editModal').modal('hide');
+        });
+        document.getElementById('save-changes').addEventListener('click', function(){
+            toastr.success('Changes saved successfully!');
+            $('#editModal').modal('hide');
         })
+    },
+
+    openEditModal: function(){
+        const currentUser = JSON.parse(localStorage.getItem('user'));
+        console.log(currentUser);
+        console.log(currentUser.name);
+        console.log(currentUser.email);
+        console.log(currentUser.password);
+        if (currentUser) {
+            document.getElementById('edit-name').value = currentUser.name;
+            document.getElementById('edit-email').value = currentUser.email;
+            document.getElementById('edit-password').value = currentUser.password;
+            $('#editModal').modal('show');
+        }
     }
 }
