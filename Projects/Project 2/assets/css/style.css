@@ -1195,3 +1195,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--highlight);}
 .account-form {
     margin-top: 50px;
 }
+
+.hidden {
+    display: none;
+}
