@@ -1,3 +1,21 @@
+toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "2500",
+    "hideDuration": "2500",
+    "timeOut": "1000",
+    "extendedTimeOut": "500",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
+
 let AccountService = {
     initFormValidation : function(formId){
         $(formId).validate({
@@ -29,35 +47,61 @@ let AccountService = {
             submitHandler: function (form) {
                 try {
                     $.blockUI({ message: '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>'});
-        
-                    setTimeout(function(){
-                        toastr.success('Form submitted successfully!');
-                        $.unblockUI();
-                    }, 2000)
-                    
+                    let formData = new FormData(form);
+                    let entity = {};
+                    formData.forEach(function(value, key) {
+                        entity[key] = value;
+                    });
+                    AccountService.login(entity);
+                    $.unblockUI();
+
                 } catch (error) {
                     console.error('Error in submitHandler:', error);
                     alert('An error occurred. Please try again later.');
-                    $.unblockUI();
+                    $.unblockUI()
                 }
             }
         });
     },
+    login : function(user){
+        $.ajax({
+            url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/users.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data){
+                let found = false;
+                data.forEach(element => {
+                    if (element.name == user.name && element.email == user.email && element.password == user.password) {
+                        localStorage.setItem('user', JSON.stringify(user));
+                        found = true;
+                    }
+                });
+                if (!found) {
+                    setTimeout(function(){toastr.error("Invalid credentials");}, 1000)
+                }else {
+                    setTimeout(function(){
+                        toastr.success('You signed in successfully!');
+                        AccountService.showProfilePage();
+                    }, 2000)
+                }
+            },
+            error: function(xhr, status, error){
+                console.error("Error fetching data from file", error);
+            }
+        })
+    },
     showProfilePage : function(){
-        document.getElementById('sign-up-form').addEventListener('submit', function(event){
-            event.preventDefault();
-            const username = document.getElementById('name').value;
-            setTimeout(function(){
-                document.getElementById('sign-up-section').classList.add('hidden');
-                document.getElementById('profile-section').classList.remove('hidden');
-                document.getElementById('profile-name').innerText = username;
-            }, 2500)
+        const username = document.getElementById('name').value;
+        document.getElementById('sign-up-section').classList.add('hidden');
+        document.getElementById('profile-section').classList.remove('hidden');
+        document.getElementById('profile-name').innerText = username;
             
-        });
         document.getElementById('logout-button').addEventListener('click', function(){
             document.getElementById('profile-section').classList.add('hidden');
             document.getElementById('sign-up-section').classList.remove('hidden');
+            toastr.info('You are signed out!');
             document.getElementById('profile-name').value = '';
+            document.getElementById('sign-up-form').reset();
         })
     }
 }

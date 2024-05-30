@@ -5,7 +5,6 @@ let OffersService = {
             type: 'GET',
             dataType: 'json',
             success: function(data){
-              console.log(data);
               let html = "";
               data.forEach(element => {
                 html += "<li class='list-group-item'><div class='card mb-3' style='max-width: auto;'><div class='row g-0'>" +              
