@@ -39,7 +39,7 @@ let OffersService = {
         }
     },
 
-    getOfferById: function(id){
+    getOfferById: function(id, callback){
       $.ajax({
         url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/offer' + id + '.json',
         type: 'GET',
@@ -47,8 +47,8 @@ let OffersService = {
         success: function(data){
           $.blockUI();
           localStorage.setItem('selectedOffer', JSON.stringify(data));
-          console.log(JSON.stringify(localStorage.getItem('selectedOffer')));
           $.unblockUI();
+          if(callback) callback();
         },
         error: function(xhr, status, error){
           console.log("Error fetching data from file ", error);
@@ -58,12 +58,29 @@ let OffersService = {
     },
 
     openViewMore: function(id){
-      OffersService.getOfferById(id);
-      window.location.replace("#view-more");
+      OffersService.getOfferById(id, function(){
+        window.location.replace("#view-more");
+        OffersService.populateViewMore();
+      });
     },
 
     populateViewMore: function(){
-      let selectedOffer = localStorage.getItem('selectedOffer');
+      let selectedOffer = JSON.parse(localStorage.getItem('selectedOffer'));
+      console.log(selectedOffer);
+      let offerMain = "<div class='col-md-3'><img src='" + selectedOffer.imgSrc + "'>" +
+                      "</div><div class='section-header col-md-9'><h2>" + selectedOffer.cardTitle + 
+                      "</h2><p><small>" + selectedOffer.cardSmallText + "</small></p>" +
+                      "<div class='main-content'><p>" + selectedOffer.cardText + "</p></div></div>";
+      let offerOptions = "<h4>Pick wanted options</h4>";
+      for (let option in selectedOffer.options) {
+        offerOptions += "<div class='form-check'><input class='form-check-input' type='checkbox' id='" + option + "'>" +
+                        "<label class='form-check-label' for='" + option + "'>" + selectedOffer.options[option] + "</label></div>";
+      }
+      document.getElementById("offer-main").innerHTML = offerMain;
+      document.getElementById("offer-options").innerHTML = offerOptions;
+    },
 
+    reservationSuccess: function(){
+      toastr.success("You successfully made a reservation!");
     }
 }

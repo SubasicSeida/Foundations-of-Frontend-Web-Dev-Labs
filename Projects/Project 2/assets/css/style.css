@@ -1264,3 +1264,43 @@ input.form-control {
     background-color: var(--background-secondary);
     color: var(--text-color);
 }
+
+.view-more {
+    padding:90px 0 90px;
+    background: var(--background-secondary);
+}
+
+#offer-main {
+    margin-top: 78px;
+    max-height: 200px;
+}
+
+#offer-options {
+    margin-top: 50px;
+}
+
+.form-check {
+    padding: 10px 50px;
+}
+
+.form-check > input {
+    margin-right: 10px;
+}
+
+.choose-date > h4 {
+    margin-top: 45px;
+    margin-bottom: 15px;
+}
+
+#offer-options > h4 {
+    margin-bottom: 15px;
+}
+
+.reserve-btn{
+    margin-left: 280px;
+    margin-top: 20px;
+}
+
+.reserve-btn:hover {
+    color: var(--dark);
+}

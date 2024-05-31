@@ -3,5 +3,11 @@
     "imgSrc": "assets/images/explore/e3.jpg",
     "cardTitle": "europe tour",
     "cardText": "🌍✈️ Explore the Charms of Europe! ✈️🌍Embark on an unforgettable journey through the heart of Europe with our exclusive tour package! Immerse yourself in the rich tapestry of history, culture, and breathtaking landscapes.",
-    "cardSmallText": "From <span class='explore-price'>5k$-10k$</span>"
+    "cardSmallText": "From <span class='explore-price'>5k$-10k$</span>",
+    "options": {
+        "guidedTours": "Include guided tours?",
+        "accommodation": "Select accommodation type",
+        "transportation": "Choose transportation mode",
+        "meals": "Include meals?"
+    }
 }
