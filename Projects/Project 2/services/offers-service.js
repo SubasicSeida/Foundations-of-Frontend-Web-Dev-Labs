@@ -12,7 +12,8 @@ let OffersService = {
                                   "</div><div class='col-md-9'><div class='card-body'><h5 class='card-title single-explore-txt bg-theme-5'>" +
                                   element.cardTitle + "</h5><p class='card-text' style='margin-right: 20px;'>" + element.cardText +
                                   "</p><p class='card-text'><small class='text-body-secondary'><span>" + element.cardSmallText +
-                                  "</span></small></p></div></div></div></div></li>";
+                                  "</span></small></p><button class='btn btn-primary' onclick='OffersService.openViewMore(" + 
+                                  element.id + ")'>View More</button></div></div></div></div></li>";
               });
               $("#explore-list").html(html);
             },
@@ -36,5 +37,33 @@ let OffersService = {
             } 
             });
         }
+    },
+
+    getOfferById: function(id){
+      $.ajax({
+        url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/offer' + id + '.json',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data){
+          $.blockUI();
+          localStorage.setItem('selectedOffer', JSON.stringify(data));
+          console.log(JSON.stringify(localStorage.getItem('selectedOffer')));
+          $.unblockUI();
+        },
+        error: function(xhr, status, error){
+          console.log("Error fetching data from file ", error);
+          $.unblockUI();
+        }
+      })
+    },
+
+    openViewMore: function(id){
+      OffersService.getOfferById(id);
+      window.location.replace("#view-more");
+    },
+
+    populateViewMore: function(){
+      let selectedOffer = localStorage.getItem('selectedOffer');
+
     }
 }

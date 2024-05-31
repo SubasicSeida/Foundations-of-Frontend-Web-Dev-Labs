@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "imgSrc": "assets/images/explore/e2.jpg",
+    "cardTitle": "swim and dine resort",
+    "cardText": "🌊🍽️ Dive into Luxury at AquaEats Resort! 🍽️🌊 Escape to paradise at AquaEats, where the crystal-clear waters of our private beach meet world-class dining for an unforgettable experience.",
+    "cardSmallText": "From <span class='explore-price'>50$-500$</span>",
+    "type": "hotel",
+    "options": {
+        "balcony": "Do you want a balcony?",
+        "breakfast": "Include breakfast?",
+        "airportPickup": "Need airport pickup?"
+    }
+}

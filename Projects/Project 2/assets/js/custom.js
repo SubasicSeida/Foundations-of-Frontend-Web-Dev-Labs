@@ -20,6 +20,10 @@ $(document).ready(function(){
 		view: "account",
 		load: "account.html",
 	});
+	app.route({
+		view: "view-more",
+		load: "view-more.html",
+	})
 	app.run();
 
 	

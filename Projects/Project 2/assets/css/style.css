@@ -1244,6 +1244,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--highlight);}
 .btn-primary {
     background-color: var(--highlight) !important;
     color: var(--background-primary);
+    border: none;
 }
 
 .modal-content {
