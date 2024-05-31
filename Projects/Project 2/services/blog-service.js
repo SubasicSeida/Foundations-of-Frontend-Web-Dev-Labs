@@ -1,12 +1,8 @@
 let BlogService = {
     fetchBlogsFromFile : function(){
-        $.ajax({
-            url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/blogs.json',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data){
-              console.log(data);
-              let html = "";
+
+      RestClient.get('blogs.json', function(data){
+        let html = "";
               data.forEach(element => {
                 html += "<li class='list-group-item'><div class='card mb-3' style='max-width: auto;'><div class='row g-0'>" +              
                                   "<div class='col-md-3'><img src=" + element.imgSrc + " class='img-fluid rounded-start'>" +
@@ -16,10 +12,8 @@ let BlogService = {
                                   "</span></small></p></div></div></div></div></li>";
               });
               $("#blog-list").html(html);
-            },
-            error: function(xhr, status, error){
-              console.error('Error fetching data from file : ', error);
-            }
-          })
+      }, function(error){
+        console.error('Error fetching data from file : ', error);
+      })
     }
 }

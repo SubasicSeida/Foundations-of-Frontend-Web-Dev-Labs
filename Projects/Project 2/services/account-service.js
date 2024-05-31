@@ -65,12 +65,9 @@ let AccountService = {
     },
 
     login : function(user){
-        $.ajax({
-            url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/users.json',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data){
-                let found = false;
+
+        RestClient.get('users.json', function(data){
+            let found = false;
                 data.forEach(element => {
                     if (element.name == user.name && element.email == user.email && element.password == user.password) {
                         localStorage.setItem('user', JSON.stringify(user));
@@ -85,10 +82,8 @@ let AccountService = {
                         AccountService.showProfilePage();
                     }, 2000)
                 }
-            },
-            error: function(xhr, status, error){
-                console.error("Error fetching data from file", error);
-            }
+        }, function(error){
+            console.error("Error fetching data from file", error);
         })
     },
 

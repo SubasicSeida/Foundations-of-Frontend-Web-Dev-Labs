@@ -1,11 +1,8 @@
 let OffersService = {
     fetchOffersFromFile : function(){
-        $.ajax({
-            url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/offers.json',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data){
-              let html = "";
+
+      RestClient.get('offers.json', function(data){
+        let html = "";
               data.forEach(element => {
                 html += "<li class='list-group-item'><div class='card mb-3' style='max-width: auto;'><div class='row g-0'>" +              
                                   "<div class='col-md-3'><img src=" + element.imgSrc + " class='img-fluid rounded-start'>" +
@@ -16,12 +13,10 @@ let OffersService = {
                                   element.id + ")'>View More</button></div></div></div></div></li>";
               });
               $("#explore-list").html(html);
-            },
-            error: function(xhr, status, error){
-              console.error('Error fetching data from file : ', error);
-            }
-          })
-    },
+      }, function(error){
+        console.error('Error fetching data from file : ', error);
+      })
+    }, 
 
     fetchOfferCategories : function(){
         var acc = document.getElementsByClassName("accordion");
@@ -40,20 +35,15 @@ let OffersService = {
     },
 
     getOfferById: function(id, callback){
-      $.ajax({
-        url: '/Foundations-of-Frontend-Web-Dev/Projects/Project 2/data/offer' + id + '.json',
-        type: 'GET',
-        dataType: 'json',
-        success: function(data){
-          $.blockUI();
-          localStorage.setItem('selectedOffer', JSON.stringify(data));
-          $.unblockUI();
-          if(callback) callback();
-        },
-        error: function(xhr, status, error){
-          console.log("Error fetching data from file ", error);
-          $.unblockUI();
-        }
+
+      RestClient.get('offer' + id + '.json', function(data){
+        $.blockUI();
+        localStorage.setItem('selectedOffer', JSON.stringify(data));
+        $.unblockUI();
+        if(callback) callback();
+      }, function(error){
+        console.log("Error fetching data from file ", error);
+        $.unblockUI();
       })
     },
 
