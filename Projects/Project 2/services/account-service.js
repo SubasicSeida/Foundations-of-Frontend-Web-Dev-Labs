@@ -127,10 +127,6 @@ let AccountService = {
 
     openEditModal: function(){
         const currentUser = JSON.parse(localStorage.getItem('user'));
-        console.log(currentUser);
-        console.log(currentUser.name);
-        console.log(currentUser.email);
-        console.log(currentUser.password);
         if (currentUser) {
             document.getElementById('edit-name').value = currentUser.name;
             document.getElementById('edit-email').value = currentUser.email;

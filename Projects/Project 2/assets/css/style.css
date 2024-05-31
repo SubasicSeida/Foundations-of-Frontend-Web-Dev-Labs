@@ -1240,3 +1240,26 @@ nav.navbar.bootsnav .navbar-toggle i{color: var(--highlight);}
 #profile-section p {
     padding: 30px;
 }
+
+.btn-primary {
+    background-color: var(--highlight) !important;
+    color: var(--background-primary);
+}
+
+.modal-content {
+    background-color: var(--background-primary);
+    color: var(--header-text-color);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--text-color);
+}
+
+input.form-control {
+    background-color: var(--background-secondary);
+    color: var(--text-color);
+}
