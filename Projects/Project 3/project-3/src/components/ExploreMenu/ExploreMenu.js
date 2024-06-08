@@ -1,11 +1,12 @@
 import React from "react";
 import "./ExploreMenu.css";
 import { menu_list } from "../../assets/assets";
+import { Typography } from "@mui/material";
 
 const ExploreMenu = ({ category, setCategory }) => {
   return (
     <div className="explore-menu" id="explore-menu">
-      <h1>Explore our Menu</h1>
+      <Typography variant="h4">Explore our Menu</Typography>
       <p className="explore-menu-text">
         Choose from a diverse menu featuring a delectable array of dishes
         crafted with the finest ingredients and culinary expertise. Our mission

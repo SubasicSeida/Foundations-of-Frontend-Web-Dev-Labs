@@ -1,13 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginPopUp.css";
 import { assets } from "../../assets/assets";
 
 const LoginPopUp = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Login");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+
+  useEffect(() => {
+    setFormErrors({});
+  }, [currState]);
+
+  const validateForm = () => {
+    const errors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email.trim()) {
+      errors.email = "Email is required";
+    } else if (!emailRegex.test(email)) {
+      errors.email = "Invalid email format";
+    }
+
+    if (password.trim().length < 4) {
+      errors.password = "Password must be at least 4 characters long";
+    }
+
+    if (currState === "Sign up" && !name.trim()) {
+      errors.name = "Name is required";
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log("Form submitted:", { email, password, name });
+    }
+  };
 
   return (
     <div className="login-popup">
-      <form className="login-popup-container">
+      <form className="login-popup-container" onSubmit={handleSubmit}>
         <div className="login-popup-title">
           <h2>{currState}</h2>
           <img
@@ -20,14 +57,45 @@ const LoginPopUp = ({ setShowLogin }) => {
           {currState === "Login" ? (
             <></>
           ) : (
-            <input type="text" placeholder="Name" required></input>
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              {formErrors.name && <p className="error">{formErrors.name}</p>}
+            </div>
           )}
-          <input type="email" placeholder="Email" required></input>
-          <input type="password" placeholder="Password" required></input>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            {formErrors.email && <p className="error">{formErrors.email}</p>}
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            {formErrors.password && (
+              <p className="error">{formErrors.password}</p>
+            )}
+          </div>
         </div>
-        <button>{currState === "Sign up" ? "Create account" : "Login"}</button>
+        <button type="submit">
+          {currState === "Sign up" ? "Create account" : "Login"}
+        </button>
         <div className="login-popup-condition">
-          <input type="checkbox" required></input>
+          <input type="checkbox" required />
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
         </div>
         {currState === "Login" ? (

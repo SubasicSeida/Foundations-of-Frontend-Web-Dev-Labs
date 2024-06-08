@@ -20,7 +20,44 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
+}
+
+.navbar button,
+.MuiButton-containedSecondary {
+  background: transparent;
+  font-size: 16px;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar button:hover,
+.MuiButton-containedSecondary:hover {
+  background-color: #fff4f2;
+}
+
+.navbar-right .MuiButton-root {
+  padding: 8px 25px;
+  border-radius: 50px;
+  border: 1px solid tomato;
+  transition: background-color 0.3s;
+}
+
+.navbar-right .MuiButton-startIcon {
+  margin: auto;
+}
+
+.navbar-right .large-screen {
+  margin-left: 10px;
+}
+
+.navbar-right .MuiButton-root:hover {
+  background-color: #fff4f2;
+  border-color: tomato;
 }
 
 .navbar button {
@@ -78,6 +115,9 @@
   .navbar-right button {
     padding: 8px 25px;
   }
+  .navbar-right .large-screen {
+    display: block;
+  }
 }
 
 @media (max-width: 900px) {
@@ -98,10 +138,19 @@
     padding: 7px 20px;
     font-size: 15px;
   }
+  .navbar-right .large-screen {
+    display: none;
+  }
 }
 
 @media (max-width: 750px) {
   .navbar-menu {
+    display: none;
+  }
+  .navbar-right .search-icon {
+    display: none;
+  }
+  .navbar-right .large-screen {
     display: none;
   }
 }
